@@ -1,11 +1,16 @@
 package com.example.skyscanner;
 
 import android.arch.lifecycle.LifecycleOwner;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.skyscanner.databinding.ActivityMainBinding;
+import com.example.skyscanner.databinding.RecyclerViewBinding;
 import com.example.skyscanner.viewModel.AppViewModel;
 
 import javax.inject.Inject;
@@ -14,6 +19,8 @@ import dagger.android.AndroidInjection;
 
 public class MainActivity extends AppCompatActivity implements LifecycleOwner {
 
+    Button submit;
+
     @Inject
     AppViewModel appViewModel;
 
@@ -21,11 +28,22 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AndroidInjection.inject(this);
-        ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
-        this.getLifecycle().addObserver(appViewModel);
-        activityMainBinding.setViewModel(appViewModel);
+        setContentView(R.layout.activity_main);
 
+//        RecyclerViewBinding recyclerViewBinding = DataBindingUtil.setContentView(this,R.layout.recycler_view);
+//        this.getLifecycle().addObserver(appViewModel);
+//        recyclerViewBinding.setViewModel(appViewModel);
+//        recyclerViewBinding.recyclerView.setAdapter(appViewModel.getRecyclerAdapter());
+//        recyclerViewBinding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        submit = findViewById(R.id.submit);
+    }
 
+    public void nextPage(View view) {
+        Intent intent = new Intent(this,SecondActivity.class);
+//        intent.putExtra("source","SFO-sky");
+//        intent.putExtra("destination","ORD-sky");
+//        intent.putExtra("date","2019-09-01");
+        startActivity(intent);
     }
 }

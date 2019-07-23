@@ -20,13 +20,13 @@ public class ServiceManager {
         this.serviceLayer = serviceLayer;
     }
 
-    public Observable<Example> getFlightInformation (@Path("country") String place,
-                                                     @Path("currency") String currency,
-                                                     @Path("locale") String locale,
-                                                     @Path("originplace") String origin,
-                                                     @Path("destinationplace") String destination,
-                                                     @Path("outboundpartialdate") String date)
+    public Observable<Example> getFlightInformation ( String place,
+                                                      String currency,
+                                                      String locale,
+                                                     String origin,
+                                                     String destination,
+                                                      String date)
     {
-    return serviceLayer.getFlightInfo(place,currency,locale,origin,destination,date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        return serviceLayer.getFlightInfo(place,currency,locale,origin,destination,date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 }

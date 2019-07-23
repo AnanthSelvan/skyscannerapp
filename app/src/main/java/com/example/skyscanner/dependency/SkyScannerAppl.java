@@ -6,15 +6,13 @@ import android.app.Application;
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjector;
-import dagger.android.ContributesAndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 
 public class SkyScannerAppl extends Application implements HasActivityInjector {
 
-@Inject
+    @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
-
 
     @Override
     public void onCreate() {

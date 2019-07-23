@@ -11,10 +11,10 @@ import retrofit2.http.Query;
 public interface ServiceLayer {
 
 @Headers({
-      "X-RapidAPI-Key:9dcafd6a6dmsh3e60e80f6becb4bp1fd4aejsnd7bfc9ab267f",
+      "X-RapidAPI-Key: 9dcafd6a6dmsh3e60e80f6becb4bp1fd4aejsnd7bfc9ab267f",
 })
 
-    @GET("/browseroutes/v1.0/{country}/{currency}/{locale}/{originplace}/{destinationplace}/{outboundpartialdate}")
+    @GET("browseroutes/v1.0/{country}/{currency}/{locale}/{originplace}/{destinationplace}/{outboundpartialdate}")
 Observable<Example> getFlightInfo(@Path("country") String place,
                                   @Path("currency") String currency,
                                   @Path("locale") String locale,
