@@ -15,7 +15,7 @@ import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
 
-class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity {
 
     @Inject
     AppViewModel appViewModel;

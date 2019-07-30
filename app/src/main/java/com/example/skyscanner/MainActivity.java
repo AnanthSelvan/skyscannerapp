@@ -30,12 +30,6 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
         AndroidInjection.inject(this);
         setContentView(R.layout.activity_main);
 
-//        RecyclerViewBinding recyclerViewBinding = DataBindingUtil.setContentView(this,R.layout.recycler_view);
-//        this.getLifecycle().addObserver(appViewModel);
-//        recyclerViewBinding.setViewModel(appViewModel);
-//        recyclerViewBinding.recyclerView.setAdapter(appViewModel.getRecyclerAdapter());
-//        recyclerViewBinding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         submit = findViewById(R.id.submit);
     }
 
